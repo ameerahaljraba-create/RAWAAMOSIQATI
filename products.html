@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المنتجات</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
+</head>
+
+<body>
+<a href="https://wa.me/9627XXXXXXX" class="wa-btn">💬 واتساب</a>
+<div class="control-buttons">
+    <button class="dark-btn" onclick="toggleDark()">🌙</button>
+    <button class="lang-btn" onclick="toggleLang()">AR</button>
+</div>
+
+<header>
+    <h1>المنتجات</h1>
+</header>
+
+<nav>
+<a href="index.html"><img class="icon" src="img/home.png"><span>الرئيسية</span></a>
+<a href="products.html"><img class="icon" src="img/products.png"><span>منتجات</span></a>
+<a href="gifts.html"><img class="icon" src="img/gifts.png"><span>الهدايا</span></a>
+<a href="offers.html"><img class="icon" src="img/offers.png"><span>عروض</span></a>
+<a href="about.html"><img class="icon" src="img/about.png"><span>من نحن</span></a>
+<a href="contact.html"><img class="icon" src="img/contact.png"><span>تواصل</span></a>
+<a href="faq.html"><img class="icon" src="img/faq.png"><span>أسئلة شائعة</span></a>
+</nav>
+
+<section class="video-section">
+    <div class="card">
+        <h2 id="video-title">فيديو إعلاني عن المتجر 🎵</h2>
+        <video controls class="store-video">
+            <source src="img/promo.mp4" type="video/mp4">
+            متصفحك لا يدعم تشغيل الفيديو.
+        </video>
+    </div>
+</section>
+
+<section class="products-grid">
+    
+    <div class="card product-card">
+        <img src="img/oud.png" alt="عود" class="product-img">
+        <h3 class="prod-title">عود شرقي فاخر</h3>
+        <p class="prod-price">300 د.أ</p>
+        <button class="buy-btn">شراء الآن</button>
+    </div>
+
+    <div class="card product-card">
+        <img src="img/guitar.png" alt="جيتار" class="product-img">
+        <h3 class="prod-title">جيتار كلاسيك</h3>
+        <p class="prod-price">250 د.أ</p>
+        <button class="buy-btn">شراء الآن</button>
+    </div>
+
+    <div class="card product-card">
+        <img src="img/piano.png" alt="بيانو" class="product-img">
+        <h3 class="prod-title">بيانو رقمي محترف</h3>
+        <p class="prod-price">1200 د.أ</p>
+        <button class="buy-btn">شراء الآن</button>
+    </div>
+
+    <div class="card product-card">
+        <img src="img/drums.png" alt="درمز" class="product-img">
+        <h3 class="prod-title">طقم درمز كامل</h3>
+        <p class="prod-price">850 د.أ</p>
+        <button class="buy-btn">شراء الآن</button>
+    </div>
+
+    <div class="card product-card">
+        <img src="img/tabla.png" alt="طبول" class="product-img">
+        <h3 class="prod-title">طبلة شرقية احترافية</h3>
+        <p class="prod-price">90 د.أ</p>
+        <button class="buy-btn">شراء الآن</button>
+    </div>
+
+    <div class="card product-card">
+        <img src="img/studio.png" alt="معدات استوديو" class="product-img">
+        <h3 class="prod-title">باقة معدات استوديو منزلي</h3>
+        <p class="prod-price">450 د.أ</p>
+        <button class="buy-btn">شراء الآن</button>
+    </div>
+
+</section>
+
+<div id="custom-alert-overlay" class="alert-overlay" onclick="closeAlert()">
+    <div class="custom-alert-card" onclick="event.stopPropagation()">
+        <p id="custom-alert-text">تم الشراء بنجاح! 🎉 شكراً لثقتكم بموسيقاتي.</p>
+        <button class="alert-close-btn" onclick="closeAlert()">إغلاق</button>
+    </div>
+</div>
+
+<footer>© موسيقاتي</footer>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تواصل معنا - موسيقاتي</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+<a href="https://wa.me/9627XXXXXXX" class="wa-btn">💬 واتساب</a>
+    <div class="control-buttons">
+        <button class="dark-btn" onclick="toggleDark()">🌙</button>
+        <button class="lang-btn" onclick="toggleLang()">AR</button>
+    </div>
+
+    <header>
+        <h1>تواصل معنا</h1>
+    </header>
+
+    <nav>
+        <a href="index.html"><img class="icon" src="img/home.png"><span>الرئيسية</span></a>
+        <a href="products.html"><img class="icon" src="img/products.png"><span>منتجات</span></a>
+        <a href="gifts.html"><img class="icon" src="img/gifts.png"><span>الهدايا</span></a>
+        <a href="offers.html"><img class="icon" src="img/offers.png"><span>عروض</span></a>
+        <a href="about.html"><img class="icon" src="img/about.png"><span>من نحن</span></a>
+        <a href="contact.html"><img class="icon" src="img/contact.png"><span>تواصل</span></a>
+        <a href="faq.html"><img class="icon" src="img/faq.png"><span>أسئلة شائعة</span></a>
+</nav>
+
+    <section class="card">
+        <form onsubmit="event.preventDefault(); showContactAlert(); this.reset();">
+            <input type="text" placeholder="الاسم" required style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 8px; border: 1px solid #ccc; box-sizing: border-box;">
+            <input type="email" placeholder="الإيميل" required style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 8px; border: 1px solid #ccc; box-sizing: border-box;">
+            <textarea placeholder="رسالتك" required style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 8px; border: 1px solid #ccc; height: 100px; box-sizing: border-box; resize: vertical;"></textarea>
+            <button class="buy-btn" style="width: 100%; margin: 0; cursor: pointer;">إرسال</button>
+        </form>
+    </section>
+
+    <section class="social-section">
+        <h3 class="social-title">منصات التواصل الاجتماعي</h3>
+        <div class="social-buttons">
+            <a href="#" class="custom-social-btn">فيسبوك / Facebook</a>
+            <a href="#" class="custom-social-btn">إنستغرام / Instagram</a>
+            <a href="#" class="custom-social-btn">يوتيوب / YouTube</a>
+            <a href="#" class="custom-social-btn">تيك توك / TikTok</a>
+        </div>
+    </section>
+
+    <div class="alert-overlay" id="contactAlert">
+        <div class="custom-alert-card">
+            <div id="contact-alert-text" style="font-size: 16px; font-weight: bold; color: #2c1b10; margin-bottom: 20px;">تم الإرسال بنجاح! شكراً لتواصلك مع موسيقاتي 🎵</div>
+            <button class="alert-close-btn" onclick="hideContactAlert()">موافق</button>
+        </div>
+    </div>
+
+    <footer>
+        0791234567
+    </footer>
+
+    <script>
+        function showContactAlert() {
+            // نصل إلى عنصر التنبيه الخاص بالتواصل ونضيف كلاس التفعيل
+            var alertBox = document.getElementById('contactAlert');
+            alertBox.classList.add('active');
+            
+            // تحديث النص ليتناسب مع وضع الدارك مود إذا كان فعالاً
+            var alertText = document.getElementById('contact-alert-text');
+            if(document.body.classList.contains('dark')) {
+                alertText.style.color = 'white';
+            } else {
+                alertText.style.color = '#2c1b10';
+            }
+        }
+        
+        function hideContactAlert() {
+            document.getElementById('contactAlert').classList.remove('active');
+        }
+    </script>
+
+</body>
+</html>

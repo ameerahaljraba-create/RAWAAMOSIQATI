@@ -1,0 +1,428 @@
+body{
+    margin:0;
+    font-family: Tahoma, Arial;
+    direction: rtl;
+    background:#f4f4f4;
+    transition:0.3s;
+}
+
+/* 🔘 حاوية الأزرار العلوية الموحدة */
+.control-buttons {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    display: flex;
+    gap: 8px;
+    z-index: 9999;
+}
+
+/* 🌙 زر الدارك الموحد لجميع الصفحات */
+.dark-btn{
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    border:1px solid #ccc;
+    background:#111;
+    color:white;
+    cursor:pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 🌍 زر اللغة الموحد لجميع الصفحات */
+.lang-btn{
+    height:38px;
+    padding:0 12px;
+    border-radius:20px;
+    border:1px solid #ccc;
+    background:#111;
+    color: white;
+    cursor:pointer;
+    font-size:12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* HEADER */
+header{
+    background: linear-gradient(135deg,#d98c3f,#5c3b1e);
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+/* NAV */
+nav{
+    background:#2c1b10;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    padding:12px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    font-size:12px;
+}
+
+nav a:hover{
+    transform:scale(1.1);
+    transition:0.3s;
+}
+
+.icon{
+    width:40px;
+    height:40px;
+}
+
+/* 🌟 الشعار */
+.logo{
+    width:220px;
+    display:block;
+    margin:20px auto;
+    animation: float 4s ease-in-out infinite;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+@keyframes float{
+    0%{transform:translateY(0) scale(1);}
+    50%{transform:translateY(-10px) scale(1.08);}
+    100%{transform:translateY(0) scale(1);}
+}
+
+/* CARDS */
+.card{
+    background:white;
+    padding:20px;
+    margin:15px auto;
+    width:85%;
+    border-radius:15px;
+    box-sizing: border-box;
+}
+
+/* 📺 تنسيق قسم الفيديو */
+.video-section {
+    text-align: center;
+}
+
+.store-video {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* 🛒 شبكة المنتجات (3 أعمدة ثابتة) */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    width: 85%;
+    margin: 20px auto;
+}
+
+/* كارت المنتج */
+.product-card {
+    width: 100% !important;
+    margin: 0 !important;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+/* صور المنتجات */
+.product-img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.prod-title {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.prod-price {
+    color: #e67e22;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+/* زر شراء الآن */
+.buy-btn {
+    background-color: #2c1b10;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 80%;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.buy-btn:hover {
+    background-color: #d98c3f;
+}
+
+/* 🔔 تنسيق رسالة التنبيه المخصصة */
+.alert-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.alert-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.custom-alert-card {
+    background: white;
+    padding: 25px 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+    max-width: 90%;
+    width: 350px;
+}
+
+.alert-overlay.active .custom-alert-card {
+    transform: scale(1);
+}
+
+#custom-alert-text {
+    font-size: 16px;
+    font-weight: bold;
+    color: #2c1b10;
+    margin-bottom: 20px;
+}
+
+.alert-close-btn {
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    padding: 8px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* FOOTER */
+footer{
+    background:#2c1b10;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+
+/* 📱 تنسيق قسم التواصل الاجتماعي الجديد (ألوان متجرك + توزيع صورتك) */
+.social-section {
+    text-align: center;
+    margin: 30px auto;
+}
+
+.social-title {
+    color: #2c1b10;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* يسمح بالتوزيع والنزول المائل مثل صورتك تماماً */
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.custom-social-btn {
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    background-color: #f3ebe4; /* خلفية بيج ناعمة وراقية بدل السماوي */
+    color: #2c1b10 !important; /* لون خط بني داكن متناسق مع الهوية */
+    transition: all 0.3s ease;
+}
+
+.custom-social-btn:hover {
+    background-color: #d98c3f; /* يتحول للبرتقالي الدافئ عند تمرير الماوس */
+    color: white !important;
+    transform: translateY(-2px);
+}
+
+/* 🌙 DARK MODE للموقع كامل وباقي الصفحات */
+body.dark {
+    background:#121212 !important;
+    color:white !important;
+}
+
+.dark .card{
+    background:#1e1e1e !important;
+    color: white !important;
+}
+
+.dark header{
+    background:#1a1a1a !important;
+}
+
+.dark nav{
+    background:#000 !important;
+}
+
+/* اللوجو والرسالة بالدارك */
+.dark .logo {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
+    padding: 10px;
+}
+
+.dark .custom-alert-card {
+    background: #1e1e1e;
+    color: white;
+}
+.dark #custom-alert-text {
+    color: white;
+}
+
+/* ألوان الأزرار في الدارك مود */
+.dark .dark-btn, .dark .lang-btn {
+    background: #ffffff;
+    color: #111111;
+    border-color: #ffffff;
+}
+
+.dark .buy-btn {
+    background-color: #d98c3f;
+    color: white;
+}
+.dark .prod-price {
+    color: #f1c40f;
+}
+
+/* دعم الدارك مود لقسم التواصل الاجتماعي */
+.dark .social-title {
+    color: white !important;
+}
+
+.dark .custom-social-btn {
+    background-color: #2c1b10;
+    color: #f4f4f4 !important;
+}
+
+.dark .custom-social-btn:hover {
+    background-color: #d98c3f;
+    color: white !important;
+}
+.faq-section {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-section .card {
+    border-right: 5px solid #d98c3f; /* إضافة خط جانبي للتمييز */
+    margin-bottom: 20px;
+}
+.features ul {
+    list-style: none;
+    padding: 0;
+}
+.features li {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.cta-section .buy-btn {
+    padding: 15px 40px;
+    font-size: 18px;
+}
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.card img {
+    width: 150px;        /* عرض الصورة */
+    height: 150px;       /* ارتفاع الصورة */
+    object-fit: cover;   /* يخليها مقصوصة بشكل جميل بدون تشويه */
+    border-radius: 10px; /* زوايا ناعمة */
+    display: block;
+    margin: 0 auto 10px;
+}
+.card {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    line-height: 1.9;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 12px;
+}
+.about-img {
+    width: 700px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+
+    display: block;
+    margin: 0 auto;   /* هذا يخليها بالنص */
+}
+.wa-btn{
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background: green;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    text-decoration: none;
+}
+body{
+    animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn{
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+.card:hover{
+    transform: scale(1.03);
+    transition: 0.3s;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
